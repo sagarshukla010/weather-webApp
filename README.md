@@ -6,6 +6,9 @@ heroku login  --> to login heroku
 #Deploying app to heroku:
 
 --> heroku keys:add
+--> heroku create app-predict-weather
+--> git remote
+--> git push heroku master
 
 #ssh:
 
