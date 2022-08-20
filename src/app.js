@@ -65,7 +65,6 @@ app.get("/weather", (req, res) => {
         error: error,
       });
     } else {
-
       forecast(longitude, latitude, (error, current) => {
         if (error) {
           return res.send({
@@ -74,12 +73,13 @@ app.get("/weather", (req, res) => {
         } else {
           const fc =
             current.weather_descriptions[0] +
-            ". It is currently" +
-            " " +
+            ". It is currently " +
             current.temperature +
-            " degrees out. There is a " +
+            " degrees out. It feels like " +
             current.feelslike +
-            " % chance of rain";
+            " degrees out. The humidity is " +
+            current.humidity +
+            "%. ";
 
           return res.send({
             forecast: fc,
